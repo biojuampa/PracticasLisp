@@ -10,5 +10,12 @@
     )
 )
 
-(set 'result (factorial 5))
-(print result)
+(setq input *args*)
+(if input
+    (setq num (parse-integer (nth 0 input)))
+    (setq num 5)
+)
+
+(setq result (factorial num))
+(format t "  !~D = ~D" num result)
+
