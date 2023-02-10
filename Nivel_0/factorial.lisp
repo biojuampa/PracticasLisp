@@ -1,3 +1,5 @@
+#!/usr/bin/clisp
+
 ; Clásica práctica de recursividad
 ; con la "función factorial".
 
@@ -9,5 +11,4 @@
 )
 
 (set 'result (factorial 5))
-
 (print result)

@@ -1,3 +1,5 @@
+#!/usr/bin/clisp
+
 #| Programa: lista_numeros.lisp
    --------
 
