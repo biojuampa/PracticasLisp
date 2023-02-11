@@ -13,14 +13,31 @@
                 cual será la salida del programa.
 |#
 
-(defun lista_numeros (il &optional (fl nil))
+; Usando la función «cond»
+(defun lista_numeros_1 (il &optional (fl nil))
     (setq i (car il))
     (setq r (cdr il))
+
     (cond ((null il) fl)
-          ((numberp i) (lista_numeros r (cons i fl)))
-          (T (lista_numeros r fl))
+          ((numberp i) (lista_numeros_1 r (cons i fl)))
+          (T (lista_numeros_1 r fl))
     )
 )
 
-(print (lista_numeros '(a 10 b 20 c 30)))
+; Usando la función «if»
+(defun lista_numeros_2 (il &optional (fl nil))
+    (setq i (car il))
+    (setq r (cdr il))
+    
+    (if (null il)
+        fl
+        (if (numberp i)
+            (lista_numeros_2 r (cons i fl))
+            (lista_numeros_2 r fl)
+        )
+    )
+)
+
+(print (lista_numeros_1 '(a 1 b 2 c 3)))
+(print (lista_numeros_2 '(a 10 b 20 c 30)))
 
